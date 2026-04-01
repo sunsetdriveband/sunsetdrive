@@ -30,7 +30,7 @@
     724-664-2438
   </p>
 
-  <form name="booking" method="POST" data-netlify="true" class="booking-form">
+  <form name="booking" method="POST" data-netlify="true" id="booking-form">
   <input type="hidden" name="form-name" value="booking" />
 
   <div class="form-row">
@@ -46,6 +46,10 @@
   <button type="submit">Send</button>
 </form>
 
+<div id="form-popup" class="form-popup">
+  <p>Thanks! We'll get back to you soon.</p>
+</div>
+  
 <footer class="site-footer">
   <div class="footer-content">
     <h3>Join the Email List</h3>
@@ -79,5 +83,33 @@
 </footer>
 
 </section>
+
+  <script>
+  const form = document.getElementById("booking-form");
+  const popup = document.getElementById("form-popup");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data
+    })
+    .then(() => {
+      form.reset();
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
+    })
+    .catch(() => {
+      alert("Something went wrong. Please try again.");
+    });
+  });
+</script>
+  
   </body>
 </html>
