@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sunset Drive - About</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="256x256" href="SD.gif">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="video.html">Video</a>
+    <a href="store.html">Store</a>
+    <a href="booking.html" class="cta">Booking</a>
+  </div>
+</nav>
+
+<section class="about-bio">
+  <p>
+    Sunset Drive is a genre-blending band rooted in jazz, jam, rock, blues, and soul. 
+    Built on years of playing together, their sound moves freely between tight songwriting 
+    and open-ended improvisation, pulling from a wide range of influences while staying 
+    grounded in feel and chemistry.
+  </p>
+
+  <p>
+    The band started long before the name. Guitarist Dylan VanDyke, keyboardist Alex Lichtenfels, 
+    bassist Gary Seger, and drummer Andrew Weissert met in elementary school in Pennsylvania 
+    and began playing music together in middle school. Early sessions were shaped by Pink Floyd 
+    records and long nights jamming at Nancy's house on Sunset Drive — the road that 
+    would eventually give the band its name.
+  </p>
+
+  <p>
+    The improvisational spirit of the Grateful Dead 
+    and Pink Floyd became central to their sound, pushing them toward extended jams and live 
+    experimentation. When the band relocated to Ohio for college — attending Kent State’s 
+    main and Stark campuses — their musical direction expanded even further.
+  </p>
+
+  <p>
+    Mentors such as Bobby Selvaggio heavily influenced the band members by introducing them to jazz theory, adding a new level of complexity and freedom to their music. Around this time, they met vocalist and rhythm guitarist Josh Eaton and multi-instrumentalist Chris Marcic.
+  </p>
+
+  <p>
+    Chris, a slide guitar and pedal steel player with a deep knowledge of blues, introduced the band to a wider range of blues traditions and lesser-known artists. His influence, along with Josh’s presence as a frontman, helped shape the band’s evolving identity. Although their first album was written before meeting Josh and Chris, it was recorded with them, marking a turning point in the band’s sound. Longtime collaborator and friend Ian Chovan played a key role in bringing that sound to life, helping record, produce, and mix Dog Days, the band’s first studio record. 
+
+  <p>
+    Sunset Drive continues to evolve, combining their long-standing musical connection with 
+    new influences and collaborators, always balancing structure with spontaneity.
+  </p>
+</section>
+
+<section class="band-members">
+
+  <div class="member-grid">
+    
+    <div class="member-card" onclick="openModal('dylan')">
+      <img src="images/dylan.jpg" alt="Dylan VanDyke">
+      <p>Dylan VanDyke</p>
+    </div>
+
+    <div class="member-card" onclick="openModal('alex')">
+      <img src="images/alex.jpg" alt="Alex Lichtenfels">
+      <p>Alex Lichtenfels</p>
+    </div>
+
+    <div class="member-card" onclick="openModal('gary')">
+      <img src="images/gary.jpg" alt="Gary Seger">
+      <p>Gary Seger</p>
+    </div>
+
+    <div class="member-card" onclick="openModal('andrew')">
+      <img src="images/andrew.jpg" alt="Andrew Weissert">
+      <p>Andrew Weissert</p>
+    </div>
+
+    <div class="member-card" onclick="openModal('josh')">
+      <img src="images/josh.jpg" alt="Josh Eaton">
+      <p>Josh Eaton</p>
+    </div>
+
+    <div class="member-card" onclick="openModal('chris')">
+      <img src="images/chris.jpg" alt="Chris Marcic">
+      <p>Chris Marcic</p>
+    </div>
+    
+    <div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modal-text"></div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<script>
+const memberData = {
+  dylan: "<h3>Coming soon.....</h3><p></p>",
+  
+  alex: "<h3>Coming soon.....</h3><p></p>",
+  
+  gary: "<h3>Coming soon.....</h3><p></p>",
+  
+  andrew: "<h3>Coming soon.....</h3><p></p>",
+  
+  josh: "<h3>Coming soon.....</h3><p></p>",
+  
+  chris: "<h3>Coming soon.....</h3><p></p>"
+};
+
+function openModal(member) {
+  document.getElementById("modal-text").innerHTML = memberData[member];
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <h3>Join the Email List</h3>
+    <p>Get updates on shows, new music, and more.</p>
+
+    <form class="email-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Join</button>
+    </form>
+    
+    <div class="socials">
+  <a href="https://www.facebook.com/profile.php?id=100068593279966" target="_blank" rel="noopener noreferrer">
+    <img src="facebook.svg" alt="Facebook">
+  </a>
+
+  <a href="https://instagram.com/sunsetdrivve?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
+    <img src="instagram.svg" alt="Instagram">
+  </a>
+
+  <a href="https://www.youtube.com/channel/UCND11zJvUIkS30PATDTd6FA" target="_blank" rel="noopener noreferrer">
+    <img src="youtube.svg" alt="YouTube">
+  </a>
+
+  <a href="https://www.tiktok.com/@sunset.drivve" target="_blank" rel="noopener noreferrer">
+    <img src="tiktok.svg" alt="TikTok">
+  </a>
+</div>
+
+    <p class="footer-note">© 2026 Sunset Drive</p>
+  </div>
+</footer>
+
+  </body>
+</html>

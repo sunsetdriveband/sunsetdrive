@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sunset Drive</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="256x256" href="SD.gif">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+</head>
+<body>
+  
+ <header class="full">
+  <span>Sunset Drive</span>
+</header>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="music.html">Music</a>
+    <a href="video.html">Video</a>
+    <a href="store.html">Store</a>
+    <a href="booking.html" class="cta">Booking</a>
+  </div>
+</nav>
+
+<section class="tour">
+  
+  <div class="tour-row">
+    <div class="tour-date">
+      <strong>April 4, 2026</strong>
+      <span>The Matinee Bar w/ Sine Caterva</span>
+    </div>
+
+    <div class="tour-location">
+      812 W Market St, Akron, OH 44303
+    </div>
+
+    <div class="tour-action">
+      <a href="#"
+   class="ticket-link"
+   onclick="openModal(this); return false;"
+   data-date="April 4, 2026"
+   data-venue="Matinee Bar"
+   data-location="812 W Market St, Akron, OH 44303"
+   data-time="7:00 PM – 10:00 PM"
+   data-age="18+"
+   data-price="$5 Presale/$10 Door"
+   data-link="https://www.eventbrite.com/e/sine-caterva-sunset-drive-live-at-the-matinee-tickets-1984571477713?aff=oddtdtcreator">
+   INFO
+</a>
+    </div>
+  </div>
+
+  <div class="tour-row">
+    <div class="tour-date">
+      <strong>April 11, 2026</strong>
+      <span>The Dusty Armadillo (The Kent Rockoff)</span>
+    </div>
+
+    <div class="tour-location">
+      3147 OH-44, Rootstown, OH 44272
+    </div>
+
+    <div class="tour-action">
+      <a href="#"
+   class="ticket-link"
+   onclick="openModal(this); return false;"
+   data-date="April 11, 2026"
+   data-venue="The Dusty Armadillo (The Kent Rockoff)"
+   data-location="3147 OH-44, Rootstown, OH 44272"
+   data-time="5:30PM - 11:00PM"
+   data-age="18+"
+   data-price="$12.95"
+   data-link="https://betapidsp.tixoola.com/event/kent-rockoff-c894532c832d4e1799f4b3d94d27f0a4?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnsn0IHtS8VPF1UQbxtXKYJZAtTHSyVHAogrxuMBeUJrN944X7bFe7y5ySusY_aem_JB5yhEQz56ud0-UA1KbO5w">
+   INFO
+</a>
+    </div>
+  </div>
+  
+  <div class="tour-row">
+    <div class="tour-date">
+      <strong>May 16, 2026</strong>
+      <span>Cousin's Lounge (Millvale Music Festival)</span>
+    </div>
+
+    <div class="tour-location">
+      203 Grant Ave, Millvale, PA 15209
+    </div>
+
+    <div class="tour-action">
+      <a href="#"
+      class="ticket-link"
+      onclick="openModal(this); return false;"
+      data-date="May 16, 2026"
+      data-venue="Cousin's Lounge (Millvale Music Festival)"
+      data-location="203 Grant Ave, Millvale, PA 15209"
+      data-time="6:00PM - 7:00PM"
+      data-age="21+"
+      data-price="No Cover"
+      data-link="https://www.millvalemusic.org/">
+   INFO
+</a>
+    </div>
+  </div>
+  
+  <div class="tour-row">
+    <div class="tour-date">
+      <strong>May 30, 2026</strong>
+      <span>FJKluth Art Gallery</span>
+    </div>
+
+    <div class="tour-location">
+      300 N Water St, Kent, OH 44240
+    </div>
+
+    <div class="tour-action">
+      <a href="#"
+      class="ticket-link"
+      onclick="openModal(this); return false;"
+      data-date="May 30, 2026"
+      data-venue="FJKluth Art Gallery"
+      data-location="300 N Water St, Kent, OH 44240"
+      data-time="7:00PM - 10:00PM"
+      data-age="All Ages"
+      data-price="No Cover"
+      data-link="https://www.instagram.com/fjkluthartgallery/?hl=en">
+   INFO
+</a>
+    </div>
+  </div>
+  
+  <div class="tour-row">
+    <div class="tour-date">
+      <strong>August 29, 2026</strong>
+      <span>Beck-Ringland Tavern & Scenery Hill Brewing</span>
+    </div>
+
+    <div class="tour-location">
+      2206 E National Pike, Scenery Hill, PA 15360
+    </div>
+
+    <div class="tour-action">
+      <a href="#"
+      class="ticket-link"
+      onclick="openModal(this); return false;"
+      data-date="August 29, 2026"
+      data-venue="Beck-Ringland Tavern & Scenery Hill Brewing"
+      data-location="2206 E National Pike, Scenery Hill, PA 15360"
+      data-time="7:00PM - 10:00PM"
+      data-age="All Ages"
+      data-price="No Cover"
+      data-link="https://beckringlandtavern.com/">
+   INFO
+</a>
+    </div>
+  </div>
+  <!-- Repeat for each show -->
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <h3>Join the Email List</h3>
+    <p>Get updates on shows, new music, and more.</p>
+
+    <form class="email-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Join</button>
+    </form>
+    
+    <div class="socials">
+  <a href="https://www.facebook.com/profile.php?id=100068593279966" target="_blank" rel="noopener noreferrer">
+    <img src="facebook.svg" alt="Facebook">
+  </a>
+
+  <a href="https://instagram.com/sunsetdrivve?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
+    <img src="instagram.svg" alt="Instagram">
+  </a>
+
+  <a href="https://www.youtube.com/channel/UCND11zJvUIkS30PATDTd6FA" target="_blank" rel="noopener noreferrer">
+    <img src="youtube.svg" alt="YouTube">
+  </a>
+
+  <a href="https://www.tiktok.com/@sunset.drivve" target="_blank" rel="noopener noreferrer">
+    <img src="tiktok.svg" alt="TikTok">
+  </a>
+</div>
+
+    <p class="footer-note">© 2026 Sunset Drive</p>
+  </div>
+</footer>
+
+<div id="ticketModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">✕</span>
+
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+function openModal(link) {
+  const modal = document.getElementById("ticketModal");
+  const content = document.getElementById("modalContent");
+
+  const d = link.dataset;
+
+  content.innerHTML = `
+    <p><strong>${d.date}</strong></p>
+    <p>${d.venue}</p>
+    <p>${d.location}</p>
+    <hr>
+    <p><strong>Time:</strong> ${d.time}</p>
+    <p><strong>Age:</strong> ${d.age}</p>
+    <p><strong>Price:</strong> ${d.price}</p>
+    <br>
+    <div class="ticket-btn-wrap">
+  <a href="${d.link}" target="_blank" class="buy-ticket-btn">
+    Buy Tickets
+  </a>
+</div>
+  `;
+
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("ticketModal").style.display = "none";
+}
+
+// OPTIONAL: click outside to close
+window.onclick = function(e) {
+  const modal = document.getElementById("ticketModal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+</script>
+
+</body>
+</html>

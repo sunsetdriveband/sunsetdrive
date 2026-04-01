@@ -1,0 +1,715 @@
+:root {
+  --text: #ffffff;
+  --border: #456a6c;
+  --accent: #ff9e57;
+  --bg: rgba(10,40,45,.85);
+  --gradientBottom: #082c33;
+  --gradientTop: #0f3f46;
+}
+
+@font-face {
+  font-family: 'TrashWax';
+  src: url('tw.ttf') format('truetype');
+  /* if it's .woff use:
+     src: url('TrashWax.woff') format('woff');
+  */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 80% 18%, rgba(255,255,210,.9) 0%, rgba(255,255,210,.3) 8%, transparent 20%),
+    linear-gradient(to bottom,#66baff 0%,#79c8ff 25%,#94d9ff 55%);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  padding-bottom: 100px;
+  font-family: 'MS PGothic', Verdana, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(0, 0, 0, 0.2); /* adjust 0.2–0.4 */
+  pointer-events: none;
+}
+
+.small { flex: 1 1 9%; }
+.large { flex: 1 1 82%; }
+.full  { flex: 1 1 100%; }
+.half  { flex: 1 1 49%; }
+
+header span {
+  position: relative;
+  display: block;
+  margin-top: clamp(60px, 12vh, 140px);
+
+  font-family: 'TrashWax', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+
+  color: white;
+  
+/* ============================  
+  text-shadow:
+    0 0 10px rgba(168, 168, 168, 0.8),
+    0 0 30px rgba(113, 113, 113, 0.8),
+    0 0 50px rgba(121, 121, 121, 0.8);
+============================ */
+
+}
+
+/* ============================
+   MOBILE STACK + ZOOM EFFECT
+============================ */
+
+@media (max-width: 768px) {
+  /* Stack everything vertically */
+  .container {
+    display: block;
+    max-width: 95%;
+    margin: 20px auto;
+    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+}
+  }
+
+  /* Force all layout sections full width */
+  .small,
+  .large,
+  .half,
+  .full {
+    width: 100%;
+    flex: none;
+    margin-bottom: 12px;
+  }
+
+  /* Slight zoom-in effect */
+  body {
+    font-size: 1.2rem;
+  }
+
+  header span {
+  font-family: 'TrashWax', serif;
+
+  font-size: clamp(8rem, 10vw, 9rem); /* 👈 magic line */
+  text-align: center;
+  color: white;
+}
+
+
+@media (max-width: 700px) {
+  .tour-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .tour-action {
+    margin-top: 10px;
+  }
+}
+
+
+.tour {
+  max-width: 900px;
+  margin: clamp(120px, 20vh, 220px) auto;
+  padding: 0 20px;
+  color: white;
+}
+
+.tour h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Each row */
+.tour-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Left side (date + venue) */
+.tour-date strong {
+  display: block;
+  font-size: 18px;
+}
+
+.tour-date span {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Middle (location) */
+.tour-location {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Right (button) */
+.tour-action button {
+  background: #ddd;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.tour-action button:hover {
+  background: black;
+  color: white;
+}
+
+.site-footer {
+  margin-top: 100px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.footer-content p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.email-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* INPUT — match booking */
+.email-form input {
+  padding: 14px;
+  width: 260px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.15);
+  color: white;
+  font-size: 14px;
+}
+
+/* placeholder */
+.email-form input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* BUTTON — match your site buttons */
+.email-form button {
+  padding: 14px 20px;
+  border: 2px solid black;
+  background: #ddd;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover */
+.email-form button:hover {
+  background: black;
+  color: white;
+}
+
+.footer-note {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .email-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-form input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .email-form button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .tour-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center; /* 👈 centers all text */
+  }
+
+  .tour-date,
+  .tour-location,
+  .tour-action {
+    justify-self: center; /* 👈 centers each block in grid */
+  }
+
+  .tour-action button {
+    width: 100%;
+    max-width: 250px; /* 👈 keeps it from being too wide */
+  }
+}
+
+.ticket-btn {
+  display: inline-block;
+  background: #ddd;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.ticket-btn:hover {
+  background: black;
+  color: white;
+}
+
+/* iOS auto-link fix */
+a, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+a[href="tel"],
+a[href="mailto"],
+a[href="http"] {
+  text-decoration: none;
+  color: inherit;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.socials a img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* makes icons white */
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.socials a img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-box {
+  background: rgba(0,0,0,0.9);
+  color: white;
+  width: 320px;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid white;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ticket-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid black;
+  background-color: #d9d9d9; /* match your button */
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* remove blue/purple link states */
+.ticket-link:visited,
+.ticket-link:active {
+  color: black;
+}
+
+/* hover effect (optional but nice) */
+.ticket-link:hover {
+  background-color: #cfcfcf;
+}
+
+.ticket-btn-wrap {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.buy-ticket-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* hover effect */
+.buy-ticket-btn:hover {
+  background: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white; /* change if needed */
+  font-size: 18px;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+
+  .nav-links {
+    flex-wrap: wrap;          /* allows wrapping */
+    justify-content: center;  /* keeps centered */
+    gap: 12px;                /* tighter spacing */
+  }
+
+  .nav-links a {
+    font-size: 16px;          /* slightly smaller text */
+  }
+
+}
+
+.music-section {
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.music-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.discography {
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.album-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.album-grid img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.video-grid-section {
+  max-width: 900px;
+  margin: 120px auto;   /* centers the whole section */
+  padding: 0 16px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* THIS is the real centering fix */
+.video-item {
+  width: 100%;
+  margin: 0 auto;   /* 👈 centers each video */
+  
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video-item iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 9px;
+  border: none;
+}
+
+@media (min-width: 700px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-bio {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.about-bio p {
+  max-width: 650px;     /* controls text width */
+  margin: 0 auto 22px;  /* centers each paragraph */
+  font-size: 16px;
+  line-height: 1.75;
+  color: #f0f0f0;
+}
+
+/* Slight indent feel like editorial text */
+.about-bio p:first-of-type {
+  margin-top: 10px;
+}
+
+/* Optional: make text column feel more "print-like" */
+.about-bio {
+  letter-spacing: 0.2px;
+}
+
+
+.band-members {
+  text-align: center;
+  margin: 80px auto;
+}
+
+.band-members h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;                /* tighter */
+  max-width: 700px;         /* 👈 THIS is key */
+  margin: 40px auto;
+}
+
+.member-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.member-card img {
+  width: 100%;
+  height: 180px;       /* 👈 controls size */
+  object-fit: cover;   /* 👈 keeps them clean */
+  border-radius: 12px;
+}
+
+.member-card p {
+  margin-top: 10px;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.booking-page {
+  max-width: 900px;
+  margin: 120px auto 80px; /* 👈 more top spacing like tour */
+  padding: 0 20px;
+}
+
+/* Title */
+.booking-page h1 {
+  text-align: center;
+  font-size: 36px; /* 👈 match your tour section */
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* Text */
+.booking-page p {
+  max-width: 650px;
+  margin: 0 auto 15px;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.booking-contact {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* FORM */
+.booking-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.15);
+  color: white;
+  font-size: 14px;
+}
+
+/* control spacing cleanly */
+.booking-form input,
+.booking-form textarea,
+.form-row {
+  margin-bottom: 15px;
+}
+
+/* Placeholder styling */
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+* {
+  box-sizing: border-box;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* perfectly equal */
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Button (match your tour buttons) */
+.booking-form button {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid black;
+  background: #ddd;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.booking-form button:hover {
+  background: black;
+  color: white;
+}
+
+
+
+.coming-soon {
+  height: 80vh;              /* fills most of screen */
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  
+  font-size: 100px;
+  color: white;
+  letter-spacing: 3px;
+  text-align: center;
+
+  font-family: 'TrashWax', serif; /* match your homepage font */
+}
