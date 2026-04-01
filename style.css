@@ -341,22 +341,34 @@ a[href="http"] {
   color: white;
 
   width: 90%;
-  max-width: 400px;
+  max-width: 420px;
 
-  padding: 28px 26px;
+  padding: 36px 30px;   /* ⬅️ more breathing room */
 
   border: 2px solid white;
   position: relative;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;            /* ⬅️ THIS spreads everything out */
 }
 
-.modal-box h2,
-.modal-box h3,
+.modal-box h2 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.modal-box h3 {
+  margin: 0;
+  font-weight: normal;
+  opacity: 0.85;
+}
+
 .modal-box p {
   margin: 0;
+  line-height: 1.6;   /* ⬅️ more readable */
+  opacity: 0.9;
 }
 
 .modal-box hr {
