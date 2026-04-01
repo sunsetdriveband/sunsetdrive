@@ -698,6 +698,21 @@ a[href="http"] {
   color: white;
 }
 
+.form-popup {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 30px;
+  display: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  font-size: 14px;
+  z-index: 1000;
+}
+
 
 
 .coming-soon {
