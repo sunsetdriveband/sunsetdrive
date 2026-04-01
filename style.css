@@ -354,16 +354,11 @@ a[href="http"] {
 }
 
 .modal-box h2 {
-  margin: 0;
-  font-size: 24px;
-  line-height: 1.6;
-  letter-spacing: 1px;
+  margin: 0 0 6px 0;   /* ⬅️ space under date */
 }
 
 .modal-box h3 {
-  margin: 0;
-  font-weight: normal;
-  opacity: 0.85;
+  margin: 0 0 6px 0;   /* ⬅️ space under venue */
 }
 
 .modal-box p {
