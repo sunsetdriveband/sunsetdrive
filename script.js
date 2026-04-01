@@ -95,9 +95,7 @@ function openModal(el) {
   modal.style.display = "flex";
 }
 
-window.addEventListener("click", function(e) {
+function closeModal() {
   const modal = document.getElementById("ticketModal");
-  if (e.target === modal) {
-    closeModal();
-  }
-});
+  modal.style.display = "none";
+}
