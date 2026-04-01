@@ -63,3 +63,32 @@ if (emailForm) {
     });
   });
 }
+
+function openModal(el) {
+  const modal = document.getElementById("ticketModal");
+  const content = document.getElementById("modalContent");
+
+  const date = el.dataset.date;
+  const venue = el.dataset.venue;
+  const location = el.dataset.location;
+  const time = el.dataset.time;
+  const age = el.dataset.age;
+  const price = el.dataset.price;
+  const link = el.dataset.link;
+
+  content.innerHTML = `
+    <h2>${venue}</h2>
+    <p><strong>Date:</strong> ${date}</p>
+    <p><strong>Time:</strong> ${time}</p>
+    <p><strong>Location:</strong> ${location}</p>
+    <p><strong>Age:</strong> ${age}</p>
+    <p><strong>Price:</strong> ${price}</p>
+    <a href="${link}" target="_blank">Buy Tickets</a>
+  `;
+
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("ticketModal").style.display = "none";
+}
