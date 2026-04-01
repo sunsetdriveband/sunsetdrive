@@ -1,117 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Sunset Drive - Booking</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" sizes="256x256" href="SD.gif">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
-</head>
-<body>
-  <nav class="navbar">
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="music.html">Music</a>
-    <a href="video.html">Video</a>
-    <a href="store.html">Store</a>
-  </div>
-</nav>
+const form = document.getElementById("booking-form");
+const popup = document.getElementById("form-popup");
 
-<section class="booking-page">
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  <p>
-    Interested in booking Sunset Drive? Fill out the form below or reach out directly and we’ll get back to you soon. Coming soon.....
-  </p>
+  fetch("/", {
+    method: "POST",
+    body: new FormData(form)
+  }).then(() => {
+    popup.classList.add("show");
+    form.reset();
 
-  <p class="booking-contact">
-    sunsetdrive000@gmail.com <br>
-    724-664-2438
-  </p>
-
-  <form name="booking" method="POST" data-netlify="true" id="booking-form" class="booking-form">
-  <input type="hidden" name="form-name" value="booking" />
-
-  <div class="form-row">
-    <input type="text" name="first-name" placeholder="First Name" required />
-    <input type="text" name="last-name" placeholder="Last Name" required />
-  </div>
-
-  <input type="email" name="email" placeholder="Email" required />
-  <input type="text" name="event" placeholder="Event / Venue Name" />
-
-  <textarea name="message" placeholder="Message" required></textarea>
-
-  <button type="submit">Send</button>
-</form>
-
-<div id="form-popup" class="form-popup">
-  <p>Thanks! We'll get back to you soon.</p>
-</div>
-  
-<footer class="site-footer">
-  <div class="footer-content">
-    <h3>Join the Email List</h3>
-    <p>Get updates on shows, new music, and more.</p>
-
-    <form class="email-form">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Join</button>
-    </form>
-    
-    <div class="socials">
-  <a href="https://www.facebook.com/profile.php?id=100068593279966" target="_blank" rel="noopener noreferrer">
-    <img src="facebook.svg" alt="Facebook">
-  </a>
-
-  <a href="https://instagram.com/sunsetdrivve?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">
-    <img src="instagram.svg" alt="Instagram">
-  </a>
-
-  <a href="https://www.youtube.com/channel/UCND11zJvUIkS30PATDTd6FA" target="_blank" rel="noopener noreferrer">
-    <img src="youtube.svg" alt="YouTube">
-  </a>
-
-  <a href="https://www.tiktok.com/@sunset.drivve" target="_blank" rel="noopener noreferrer">
-    <img src="tiktok.svg" alt="TikTok">
-  </a>
-</div>
-
-    <p class="footer-note">© 2026 Sunset Drive</p>
-  </div>
-</footer>
-
-</section>
-
-  <script>
-  const form = document.getElementById("booking-form");
-  const popup = document.getElementById("form-popup");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      body: data
-    })
-    .then(() => {
-      form.reset();
-      popup.style.display = "block";
-
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 3000);
-    })
-    .catch(() => {
-      alert("Something went wrong. Please try again.");
-    });
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 3000);
   });
-</script>
-
-<script src="script.js"></script>
-  
-  </body>
-</html>
+});
