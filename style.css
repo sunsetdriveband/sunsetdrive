@@ -354,7 +354,7 @@ a[href="http"] {
 }
 
 .modal-box h2 {
-  margin: 0 0 6px 0;   /* ⬅️ space under date */
+  margin: 0 0 8px 0;   /* ⬅️ space under date */
 }
 
 .modal-box h3 {
