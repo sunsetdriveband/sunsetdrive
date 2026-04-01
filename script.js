@@ -1,32 +1,65 @@
-const form = document.getElementById("booking-form");
-const popup = document.getElementById("form-popup");
+const bookingForm = document.getElementById("booking-form");
+const bookingPopup = document.getElementById("form-popup");
 
-if (form) {
-  form.addEventListener("submit", function(e) {
+const emailForm = document.querySelector(".email-form");
+const emailPopup = document.getElementById("email-popup");
+
+// BOOKING FORM
+if (bookingForm) {
+  bookingForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const data = new FormData(bookingForm);
 
     fetch("/", {
       method: "POST",
       body: data
     })
     .then(() => {
-      form.reset();
+      bookingForm.reset();
 
-      popup.style.display = "block";
-      popup.classList.add("show");
+      bookingPopup.style.display = "block";
+      bookingPopup.classList.add("show");
 
       setTimeout(() => {
-        popup.classList.remove("show");
-
+        bookingPopup.classList.remove("show");
         setTimeout(() => {
-          popup.style.display = "none";
+          bookingPopup.style.display = "none";
         }, 250);
       }, 3000);
     })
     .catch(() => {
-      alert("Something went wrong. Please try again.");
+      alert("Something went wrong.");
+    });
+  });
+}
+
+// EMAIL FORM
+if (emailForm) {
+  emailForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = new FormData(emailForm);
+
+    fetch("/", {
+      method: "POST",
+      body: data
+    })
+    .then(() => {
+      emailForm.reset();
+
+      emailPopup.style.display = "block";
+      emailPopup.classList.add("show");
+
+      setTimeout(() => {
+        emailPopup.classList.remove("show");
+        setTimeout(() => {
+          emailPopup.style.display = "none";
+        }, 250);
+      }, 3000);
+    })
+    .catch(() => {
+      alert("Something went wrong.");
     });
   });
 }
