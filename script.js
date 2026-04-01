@@ -77,18 +77,18 @@ function openModal(el) {
   const link = el.dataset.link;
 
   content.innerHTML = `
-    <h2>${venue}</h2>
-    <p><strong>Date:</strong> ${date}</p>
+    <h2>${date}</h2>
+    <h3>${venue}</h3>
+    <p>${location}</p>
+
+    <hr>
+
     <p><strong>Time:</strong> ${time}</p>
-    <p><strong>Location:</strong> ${location}</p>
     <p><strong>Age:</strong> ${age}</p>
     <p><strong>Price:</strong> ${price}</p>
-    <a href="${link}" target="_blank">Buy Tickets</a>
+
+    <a href="${link}" target="_blank" class="ticket-btn">Buy Tickets</a>
   `;
 
   modal.style.display = "flex";
-}
-
-function closeModal() {
-  document.getElementById("ticketModal").style.display = "none";
 }
