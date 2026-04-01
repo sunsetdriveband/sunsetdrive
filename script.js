@@ -94,3 +94,8 @@ function openModal(el) {
 
   modal.style.display = "block";
 }
+
+function closeModal() {
+  const modal = document.getElementById("ticketModal");
+  modal.style.display = "none";
+}
