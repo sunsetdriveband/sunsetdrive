@@ -85,30 +85,36 @@
 </section>
 
  <script>
-  const form = document.getElementById("booking-form");
-  const popup = document.getElementById("form-popup");
+const form = document.getElementById("booking-form");
+const popup = document.getElementById("form-popup");
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
 
-    const data = new FormData(form);
+  const data = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      body: data
-    })
-    .then(() => {
-      form.reset();
-      popup.style.display = "block";
+  fetch("/", {
+    method: "POST",
+    body: data
+  })
+  .then(() => {
+    form.reset();
+
+    popup.style.display = "block";   // make it exist
+    popup.classList.add("show");     // trigger animation
+
+    setTimeout(() => {
+      popup.classList.remove("show");
 
       setTimeout(() => {
         popup.style.display = "none";
-      }, 3000);
-    })
-    .catch(() => {
-      alert("Something went wrong. Please try again.");
-    });
+      }, 250);
+    }, 3000);
+  })
+  .catch(() => {
+    alert("Something went wrong. Please try again.");
   });
+});
 </script>
 
 <script src="script.js"></script>
