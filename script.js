@@ -1,18 +1,32 @@
 const form = document.getElementById("booking-form");
 const popup = document.getElementById("form-popup");
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  fetch("/", {
-    method: "POST",
-    body: new FormData(form)
-  }).then(() => {
-    popup.classList.add("show");
-    form.reset();
+    const data = new FormData(form);
 
-    setTimeout(() => {
-      popup.classList.remove("show");
-    }, 3000);
+    fetch("/", {
+      method: "POST",
+      body: data
+    })
+    .then(() => {
+      form.reset();
+
+      popup.style.display = "block";
+      popup.classList.add("show");
+
+      setTimeout(() => {
+        popup.classList.remove("show");
+
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 250);
+      }, 3000);
+    })
+    .catch(() => {
+      alert("Something went wrong. Please try again.");
+    });
   });
-});
+}
