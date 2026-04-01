@@ -733,8 +733,8 @@ a[href="http"] {
 
 .form-popup.show {
   opacity: 1;
-  trans
-
+  transform: translate(-50%, -50%) scale(1);
+}
 
 
 .coming-soon {
