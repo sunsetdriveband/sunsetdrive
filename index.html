@@ -198,44 +198,7 @@
   </div>
 </div>
 
-<script>
-function openModal(link) {
-  const modal = document.getElementById("ticketModal");
-  const content = document.getElementById("modalContent");
-
-  const d = link.dataset;
-
-  content.innerHTML = `
-    <p><strong>${d.date}</strong></p>
-    <p>${d.venue}</p>
-    <p>${d.location}</p>
-    <hr>
-    <p><strong>Time:</strong> ${d.time}</p>
-    <p><strong>Age:</strong> ${d.age}</p>
-    <p><strong>Price:</strong> ${d.price}</p>
-    <br>
-    <div class="ticket-btn-wrap">
-  <a href="${d.link}" target="_blank" class="buy-ticket-btn">
-    Buy Tickets
-  </a>
-</div>
-  `;
-
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("ticketModal").style.display = "none";
-}
-
-// OPTIONAL: click outside to close
-window.onclick = function(e) {
-  const modal = document.getElementById("ticketModal");
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
