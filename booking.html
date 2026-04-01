@@ -30,22 +30,21 @@
     724-664-2438
   </p>
 
-  <form class="booking-form">
+  <form name="booking" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="booking" />
 
-    <div class="form-row">
-      <input type="text" placeholder="First Name" required>
-      <input type="text" placeholder="Last Name" required>
-    </div>
+  <div class="form-row">
+    <input type="text" name="first-name" placeholder="First Name" required />
+    <input type="text" name="last-name" placeholder="Last Name" required />
+  </div>
 
-    <input type="email" placeholder="Email" required>
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="text" name="event" placeholder="Event / Venue Name" />
 
-    <input type="text" placeholder="Event / Venue Name">
+  <textarea name="message" placeholder="Message" required></textarea>
 
-    <textarea placeholder="Message" rows="5" required></textarea>
-
-    <button type="submit">Send</button>
-
-  </form>
+  <button type="submit">Send</button>
+</form>
 
 <footer class="site-footer">
   <div class="footer-content">
