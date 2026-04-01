@@ -87,8 +87,10 @@ function openModal(el) {
     <p><strong>Age:</strong> ${age}</p>
     <p><strong>Price:</strong> ${price}</p>
 
-    <a href="${link}" target="_blank" class="ticket-btn">Buy Tickets</a>
+    <div class="ticket-btn-wrap">
+      <a href="${link}" target="_blank" class="buy-ticket-btn">Buy Tickets</a>
+    </div>
   `;
 
-  modal.style.display = "flex";
+  modal.style.display = "block";
 }
