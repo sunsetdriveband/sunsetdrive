@@ -92,7 +92,7 @@ function openModal(el) {
     </div>
   `;
 
-  modal.style.display = "block";
+  modal.style.display = "flex";
 }
 
 function closeModal() {
